@@ -1,22 +1,26 @@
-import { ICustomer } from "../entities/ICustomer"
+import { IAddress } from "../entities/IAddress"
 
 // Create
 type CreateParams = {
-    data: Omit<ICustomer,
+    data: Omit<IAddress,
         | 'id'
+        | 'customer'
         | 'created_at'
         | 'updated_at'
+
     >
 }
 
-type CreateResponse = ICustomer
+type CreateResponse = IAddress
 
 // Find unique
 type FindUniqueParams = {
-    id: string,
+    id: string
+    select?: IAddress
+
 }
 
-type FindUniqueResponse = ICustomer | null
+type FindUniqueResponse = IAddress | null
 
 // Delete
 type DeleteParams = {
@@ -26,30 +30,31 @@ type DeleteParams = {
 // Update
 type UpdateParams = {
     id: string
-    data: Omit<ICustomer,
+    data: Omit<IAddress,
         | 'id'
+        | 'customer'
         | 'created_at'
         | 'updated_at'
     >
 }
 
-type UpdateResponse = ICustomer
+type UpdateResponse = IAddress
 
 // Find many
 type FindManyParams = {}
 
-type FindManyResponse = ICustomer[]
+type FindManyResponse = IAddress[]
 
-interface CustomerRepository {
+interface AddressRepository {
     create(params: CreateParams): Promise<CreateResponse>
     findUnique(params: FindUniqueParams): Promise<FindUniqueResponse>
-    delete(params: DeleteParams): Promise<ICustomer>
+    delete(params: DeleteParams): Promise<IAddress>
     update(params: UpdateParams): Promise<UpdateResponse>
     findMany(params: FindManyParams): Promise<FindManyResponse>
 }
 
 export {
-    CustomerRepository,
+    AddressRepository,
     CreateParams,
     CreateResponse,
     FindUniqueParams,

@@ -16,10 +16,15 @@ class PrismaCustomerRepository implements CustomerRepository {
         })
     }
 
-    async findUnique({ where }: FindUniqueParams): Promise<FindUniqueResponse> {
+    async findUnique({ id }: FindUniqueParams): Promise<FindUniqueResponse> {
 
         return await prisma.customer.findUnique({
-            where
+            where: {
+                id
+            },
+            include: {
+                address: true
+            }
         });
     }
 

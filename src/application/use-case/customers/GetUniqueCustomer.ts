@@ -24,9 +24,9 @@ class GetUniqueCustomer implements IUseCase<T, K> {
             }
 
             const findCustomer = await this.customerRepository.findUnique({
-                where: {
-                    id
-                }
+
+                id
+
             })
 
             if (!findCustomer) {

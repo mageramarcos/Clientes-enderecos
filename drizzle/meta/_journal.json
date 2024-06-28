@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1719517944877,
+      "tag": "0000_dapper_jazinda",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1719518873920,
+      "tag": "0001_yellow_spiral",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1719518980006,
+      "tag": "0002_friendly_bastion",
+      "breakpoints": true
+    }
+  ]
+}
